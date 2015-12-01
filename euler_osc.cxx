@@ -8,7 +8,7 @@ using namespace std;
 void eulerbackward(double*, const int , const double);
 void eulerforward(double*, const int , const double);
 
-int main() {
+int main(){
 
  const int n = 100;
  const double pi= M_PI;
@@ -26,13 +26,13 @@ int main() {
 
  ofstream out("euler_backward.txt");
  for (int i=0; i<N ; i++){
-   out<< i*dt<< "\t"<< x[i] << \t" << x[N+i] << endl;
+   out<< i*dt<< "\t"<< x[i] << "\t" << x[N+i] << endl;
   }
  out.close();
 
  ofstream san("euler_forward.txt");
   for (int i=0; i<N ;i++){
-    san<< i*dt << "\t" << y[i] << "/t" << y[N+i] << endl;
+    san<< i*dt << "\t" << y[i] << "\t" << y[N+i] << endl;
   }
  san.close();
 
@@ -43,14 +43,14 @@ int main() {
 
 
 void eulerbackward(double* p,  const int N, const double dt) {
- for (int i=0; i<N ; i++) {
-   p[i+1]= ( p[i] + p[N+i]*dt )/ ( 1+ dt* dt);
-   p[N+i+1]=( p[N+i]- p[i]*dt )/ (1+ dt*dt);
+ for (int i=0; i<N ; i++){
+   p[i+1]= ( p[i] + p[N+i]*dt )/( 1+ dt* dt);
+   p[N+i+1]=( p[N+i]- p[i]*dt )/(1+ dt*dt);
   }
 }
 
 void eulerforward(double* p,  const int N, const double dt) {
- for (int i=0; i<N ; i++) {
+ for (int i=0; i<N ; i++){
    p[i+1]= p[i] + dt*p[N+i];
    p[N+i+1]=p[N+i] - dt*p[i];
   }
