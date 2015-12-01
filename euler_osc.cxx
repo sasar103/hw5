@@ -49,7 +49,7 @@ void eulerbackward(double* p,  const int N, const double dt) {
   }
 }
 
-void eulerfforward(double* p,  const int N, const double dt) {
+void eulerforward(double* p,  const int N, const double dt) {
  for (int i=0; i<N ; i++) {
    p[i+1]= p[i] + dt*p[N+i];
    p[N+i+1]=p[N+i] - dt*p[i];
