@@ -24,7 +24,7 @@ int main() {
  eulerbackward(x,N,dt);
  eulerforward(y,N,dt);
 
- ofstream out ( " euler_backward.txt ");
+ ofstream out( " euler_backward.txt ");
  for (int i=0; i<N ; i++) {
    out<< i*dt<< "\t"<< x[i] << \t" << x[N+i] << endl;
   }
