@@ -24,17 +24,17 @@ int main() {
  eulerbackward(x,N,dt);
  eulerforward(y,N,dt);
 
- ofstream out( " euler_backward.txt ");
- for (int i=0; i<N ; i++) {
+ ofstream out("euler_backward.txt");
+ for (int i=0; i<N ; i++){
    out<< i*dt<< "\t"<< x[i] << \t" << x[N+i] << endl;
   }
  out.close();
 
- ofstream san( " euler_forward.txt ");
+ ofstream san("euler_forward.txt");
   for (int i=0; i<N ;i++){
     san<< i*dt << "\t" << y[i] << "/t" << y[N+i] << endl;
   }
-  san.close();
+ san.close();
 
 
  return 0;
